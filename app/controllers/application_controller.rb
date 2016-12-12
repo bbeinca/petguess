@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     query = <<-SQL
   SELECT COUNT(ID) 
   FROM guesses
-  WHERE actualvalue == guessvalue
+  WHERE actualvalue = guessvalue
     SQL
 
     ActiveRecord::Base.connection.execute(query)[0]['COUNT(ID)']
