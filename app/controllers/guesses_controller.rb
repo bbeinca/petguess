@@ -83,8 +83,9 @@ class GuessesController < ApplicationController
   def countCorrectGuesses
     query = <<-SQL
   SELECT COUNT(*) 
-  FROM guesses
-  WHERE actualvalue LIKE guessvalue
+  FROM guesses g1
+  INNER JOIN guesses g2
+  WHERE g1.actualvalue = g2.guessvalue
     SQL
 
     ActiveRecord::Base.connection.execute(query)[0]['COUNT(ID)']
