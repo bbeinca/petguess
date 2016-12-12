@@ -84,8 +84,8 @@ class GuessesController < ApplicationController
     query = <<-SQL
   SELECT COUNT(ID) 
   FROM guesses
-  WHERE (actualvalue = "dog" and guessvalue = "dog") or 
-        (actualvalue = "cat" and guessvalue = "cat")
+  WHERE (actualvalue = 'dog' and guessvalue = 'dog') or 
+        (actualvalue = 'cat' and guessvalue = 'cat')
     SQL
 
     ActiveRecord::Base.connection.execute(query)[0]['COUNT(ID)']

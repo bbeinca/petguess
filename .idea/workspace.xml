@@ -75,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/guesses_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="377">
-              <caret line="87" column="36" lean-forward="false" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
+              <caret line="87" column="24" lean-forward="false" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -622,12 +622,12 @@
       <updated>1481411527264</updated>
       <workItem from="1481411528762" duration="9376000" />
       <workItem from="1481489910029" duration="17417000" />
-      <workItem from="1481540026093" duration="1360000" />
+      <workItem from="1481540026093" duration="1432000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28153000" />
+    <option name="totallyTimeSpent" value="28225000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -995,7 +995,7 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/guesses_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
-          <caret line="87" column="36" lean-forward="false" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
+          <caret line="87" column="24" lean-forward="false" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
           <folding />
         </state>
       </provider>
