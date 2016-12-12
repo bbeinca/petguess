@@ -4,8 +4,8 @@ class GuessesController < ApplicationController
     @totalGuesses = Guess.count
     @correctGuesses = countCorrectGuesses
 
-    print("total guesses: " + @totalGuesses)
-    print("correct guesses: " + @correctGuesses)
+    print("total guesses: " + @totalGuesses.to_s)
+    print("correct guesses: " + @correctGuesses.to_s)
 
     # forced coercions to float are necessary to prevent integer math...
     # TODO check for divide by zero
