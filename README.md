@@ -1,15 +1,11 @@
-require 'securerandom'
-guid = SecureRandom.hex(10)
+# petguess
+#
+*PetGuess*
 
-TODO:
- - Heroku deployment
- - switch animal columns to enum...
- - UUID
- - authentication (set cookie and store? not sure what the best practice is here...)
- - tests
- - documentation
- - admin pages
- - statistical view (d3?)
+A single-page web app that guesses the user's pet preference based on their height and weight.
+Also provides a scatter plot of all past data collected.
+
+Implemented using JavaScript/jQuery on the front-end and Ruby/Rails on the backend.
 
 Improvements:
  - I didn't realize there were ActiveRecord enums until later on -- this would definitely be a helpful refactoring.
@@ -24,3 +20,4 @@ Improvements:
  - The guess algorithm is pretty primitive and assumes something like a linear relationship. Depending on the shape of the data
    we would need to use different kinds of statistical techniques (other types of regression analysis, perhaps)
  - I'm not fully happy with how I used a different controller for the Statistics display. This could probably be refactored.
+ - I didn't have time to write front-end tests, or sufficiently exhaustive back-end tests. These will have to be added.

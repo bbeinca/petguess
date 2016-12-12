@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c83380c-2dc8-4861-9918-7d5ce2e57e0b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/controllers/apis_controller_test.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/fixtures/apis.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/models/api_test.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/bbe.iml" afterPath="$PROJECT_DIR$/.idea/bbe.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/guess.rb" afterPath="$PROJECT_DIR$/app/models/guess.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/controllers/guesses_controller_test.rb" afterPath="$PROJECT_DIR$/test/controllers/guesses_controller_test.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/guesses.yml" afterPath="$PROJECT_DIR$/test/fixtures/guesses.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/guess_test.rb" afterPath="$PROJECT_DIR$/test/models/guess_test.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scratch.txt" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,12 +63,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="guesses_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="guesses_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/guesses_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="45">
+                <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -128,26 +131,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
               <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/stats/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -206,6 +189,7 @@
         <option value="$PROJECT_DIR$/app/models/guess.rb" />
         <option value="$PROJECT_DIR$/test/fixtures/guesses.yml" />
         <option value="$PROJECT_DIR$/test/controllers/guesses_controller_test.rb" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -455,7 +439,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="SearchEverywhereHistoryKey" value="routes&#9;FILE&#9;file:///Users/beloy/Dropbox/Personal/Chalk Schools/bbe/config/routes.rb&#10;Utils&#9;null&#9;null&#10;application.js&#9;FILE&#9;file:///Users/beloy/Dropbox/Personal/Chalk Schools/bbe/app/assets/javascripts/application.js&#10;rou&#9;FILE&#9;file:///Users/beloy/Dropbox/Personal/Chalk Schools/bbe/config/routes.rb&#10;guess&#9;FILE&#9;file:///Users/beloy/Dropbox/Personal/Chalk Schools/bbe/app/models/guess.rb&#10;Apis&#9;FILE&#9;file:///Users/beloy/RubymineProjects/bbe/db/migrate/20161211013850_create_apis.rb&#10;seeds&#9;FILE&#9;file:///Users/beloy/RubymineProjects/bbe/db/seeds.rb&#10;index.html&#9;FILE&#9;file:///Users/beloy/RubymineProjects/bbe/app/views/guesses/index.html.erb&#10;routes.&#9;FILE&#9;file:///Users/beloy/RubymineProjects/bbe/config/routes.rb" />
+    <property name="SearchEverywhereHistoryKey" value="README&#9;FILE&#9;file:///Users/beloy/Dropbox/Personal/Chalk Schools/bbe/README.md&#10;routes&#9;FILE&#9;file:///Users/beloy/Dropbox/Personal/Chalk Schools/bbe/config/routes.rb&#10;Utils&#9;null&#9;null&#10;application.js&#9;FILE&#9;file:///Users/beloy/Dropbox/Personal/Chalk Schools/bbe/app/assets/javascripts/application.js&#10;rou&#9;FILE&#9;file:///Users/beloy/Dropbox/Personal/Chalk Schools/bbe/config/routes.rb&#10;guess&#9;FILE&#9;file:///Users/beloy/Dropbox/Personal/Chalk Schools/bbe/app/models/guess.rb&#10;Apis&#9;FILE&#9;file:///Users/beloy/RubymineProjects/bbe/db/migrate/20161211013850_create_apis.rb&#10;seeds&#9;FILE&#9;file:///Users/beloy/RubymineProjects/bbe/db/seeds.rb&#10;index.html&#9;FILE&#9;file:///Users/beloy/RubymineProjects/bbe/app/views/guesses/index.html.erb&#10;routes.&#9;FILE&#9;file:///Users/beloy/RubymineProjects/bbe/config/routes.rb" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
     <property name="editor.config.accepted" value="true" />
     <property name="FullScreen" value="true" />
@@ -735,7 +719,7 @@
       <updated>1481411527264</updated>
       <workItem from="1481411528762" duration="9376000" />
       <workItem from="1481489910029" duration="17417000" />
-      <workItem from="1481540026093" duration="2532000" />
+      <workItem from="1481540026093" duration="2784000" />
     </task>
     <servers />
   </component>
@@ -772,13 +756,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29325000" />
+    <option name="totallyTimeSpent" value="29577000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19241774" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19241774" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18526466" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -811,13 +795,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -831,6 +808,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1029,7 +1007,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scratch.txt" />
     <entry file="file://$PROJECT_DIR$/app/controllers/stats_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1144,8 +1121,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/guesses_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="45">
+            <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scratch.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
           <folding />
         </state>
       </provider>
