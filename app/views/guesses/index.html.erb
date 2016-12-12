@@ -1,0 +1,241 @@
+<script>
+    // Set everything to desired initial state when the page is loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        resetToInitialState()
+    }, false);
+
+    /**
+     * Helper method to restore the UI to the "initial" state.
+     */
+    function resetToInitialState() {
+        // Enable the entry fields and disable the submit button
+        setElementEnabled("guessEntry", true)
+        setElementEnabled("guessButton", false)
+
+        // Show and hide necessary UI elements
+        $(".hideGroup0").show();
+        $(".hideGroup1").hide();
+        $(".hideGroup2").hide();
+
+        $(".actualresponse-yesvalue").hide();
+        $(".actualresponse-novalue").hide();
+
+        $(".catImage").hide();
+        $(".dogImage").hide();
+
+        // clean up the form values in the data- elements
+        var returnPayload = document.getElementById("actualValuePayload");
+        returnPayload.dataset['guessid'] = '';
+        returnPayload.dataset['yesvalue'] = '';
+        returnPayload.dataset['novalue'] = '';
+
+        // Clean up the user entry fields
+        document.getElementById('h').value = ""
+        document.getElementById('w').value = ""
+    }
+
+    /**
+     * Called from the "oninput" handlers on the guess form inputs so we can dynamically enable
+     * the "guess my pet" button once there is input in both fields. The HTML input elements provide
+     * some validation, although this could be improved in submitGuess().
+     */
+    function maybeEnableGuessButton() {
+        var heightValue = document.getElementById('h').value;
+        var weightValue = document.getElementById('w').value;
+        if (!!heightValue && !!weightValue) {
+            setElementEnabled("guessButton", true)
+        } else {
+            setElementEnabled("guessButton", false)
+        }
+    }
+
+    function submitGuess() {
+        // Disable the guess entry form before making server request for guess
+        setElementEnabled("guessEntry", false);
+
+        // Hide the guess entry form and show the guess response UI
+        $(".hideGroup0").hide();
+        $(".hideGroup1").show();
+
+        // Extract the user's input for sending
+        // TODO: validate the values are non-null/non-empty and numeric
+        var heightValue = document.getElementById('h').value;
+        var weightValue = document.getElementById('w').value;
+
+        // Send the data to the server to persist the input data and get the guess value
+        // TODO: better error handling in case server does not respond / malformed response
+        $.ajax({
+            type: "POST",
+            url: "guesses",
+            data: {height: heightValue, weight: weightValue},
+            success: handleGuessReturn,
+            error: function (result) {
+                alert(result);
+            },
+            dataType: "json"
+        });
+    }
+
+    /**
+     * Callback that handles the return of the "guess" data from the backend.
+     *
+     * Stores the entity identifier for later update.
+     */
+    function handleGuessReturn(data) {
+        var returnPayload = document.getElementById("actualValuePayload");
+
+        if (data.guessvalue == "dog") {
+            $(".catImage").hide();
+            $(".dogImage").show();
+            returnPayload.dataset['yesvalue'] = 'dog';
+            returnPayload.dataset['novalue'] = 'cat';
+        } else if (data.guessvalue == "cat") {
+            $(".catImage").show();
+            $(".dogImage").hide();
+            returnPayload.dataset['yesvalue'] = 'cat';
+            returnPayload.dataset['novalue'] = 'dog';
+        }
+
+        // Store the ID of the persisted guess so we can update it with the
+        // user's "actual" value. This should be changed to a UUID, though,
+        // to avoid leaking internal IDs to the client.
+
+        returnPayload.dataset['guessid'] = data.id
+    }
+
+    /**
+     * Submits the user's actual value as a PATCH of the existing entity.
+     *
+     * Calls guesses_controller#update on the backend
+     *
+     * @param correctValueElement specifies whether the guess was correct or not
+     */
+    function submitActual(correctValueElement) {
+        // Load the ID to update and the "correct value"
+        var returnPayload = document.getElementById("actualValuePayload");
+        var id = returnPayload.dataset['guessid'];
+        var actualValue = returnPayload.dataset[correctValueElement];
+
+        // Send the data to the server to persist the input data and get the guess value
+        // TODO: better error handling in case server does not respond / malformed response
+        var patchUrl = "guesses/" + id
+        $.ajax({
+            type: "PATCH",
+            url: patchUrl,
+            data: {id: id, actualvalue: actualValue},
+            error: function (result) {
+                alert(result);
+            },
+            dataType: "json"
+        });
+
+        // Cleanup the UI
+        $(".actualresponse-" + correctValueElement).show()
+        $(".hideGroup1").hide();
+        $(".hideGroup2").show();
+    }
+
+    /**
+     * Enables or disables the form fields contained within the given <div> id.
+     *
+     * @param elementId the ID of the <div> whose form fields should be enabled/disabled.
+     * @param enabled true if the form fields should be enabled; false otherwise.
+     */
+    function setElementEnabled(elementId, enabled) {
+        var fields = document.getElementById(elementId).getElementsByTagName('*');
+        for (var i = 0; i < fields.length; i++) {
+            fields[i].disabled = !enabled;
+        }
+    }
+</script>
+
+<!-- Form for entering a guess; initally visible and enabled; becomes disabled after click -->
+<div id="guessEntry" class="hideGroup0">
+
+  <div class="panel panel-default" style="padding:25px 25px 25px 25px">
+    <h4>Enter your data:</h4>
+    <div class="panel-body">
+
+      <form onsubmit="submitGuess();" action="#" accept-charset="UTF-8" method="get">
+        <input name="utf8" type="hidden" value="&#x2713;"/>
+
+        <div class="form-group">
+          <div class="input-group">
+            <input type="number"
+                   name="h"
+                   id="h"
+                   maxlength="5"
+                   size="5"
+                   class="form-control"
+                   placeholder="Height"
+                   min="1"
+                   max="199"
+                   pattern="[0-9]*"
+                   required
+                   autofocus
+                   oninput="maybeEnableGuessButton()"/>
+            <div class="input-group-addon"> in</div>
+          </div>
+        </div>
+        <br/>
+        <div class="form-group">
+          <div class="input-group">
+            <input type="number" name="w" id="w" maxlength="5" size="5" class="form-control" placeholder="Weight" min="1" max="499" pattern="[0-9]*" required oninput="maybeEnableGuessButton()"/>
+            <div class="input-group-addon"> lb</div>
+          </div>
+        </div>
+        <br/>
+        <div id="guessButton" class="form-group">
+          <input type="submit" value="Guess My Preferred Pet" class="btn btn-primary"/>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
+<div id="guessResponse" class="hideGroup1">
+  <div class="panel panel-default" style="padding:25px 25px 25px 25px">
+
+    <div>
+      <%= image_tag "dog.jpg", class: "dogImage", height: '200', width: '300' %>
+
+      <%= image_tag "cat.jpg", class: "catImage", height: '200', width: '300' %>
+    </div>
+
+    <div id="actualValuePayload" data-guessid="" data-yesvalue="" data-novalue="">
+      <!-- empty div to store the response data -->
+    </div>
+
+    <div id="responseButtons">
+
+      <h5>Was our guess correct?</h5>
+      <br/>
+      <button type="button" class="btn btn-success" onclick="submitActual('yesvalue');">Yes</button>
+
+      <button type="button" class="btn btn-danger" onclick="submitActual('novalue');">No</button>
+
+    </div>
+  </div>
+</div>
+
+<div class="hideGroup2">
+  <div class="panel panel-default" style="padding:25px 25px 25px 25px">
+    <div class="actualresponse-yesvalue">
+
+      <h5>That's great! We'll use your input to make our future predictions even better. Thanks for
+        participating!</h5>
+      <br/>
+      <button type="button" class="btn" onclick="location.reload();">Restart</button>
+    </div>
+
+    <div class="actualresponse-novalue">
+
+      <h5>Sorry to hear that! We'll be able to use your input so we can make a better guess in the future. Thanks
+        for participating!</h5>
+      <br/>
+      <button type="button" class="btn" onclick="location.reload();">Restart</button>
+    </div>
+  </div>
+</div>
