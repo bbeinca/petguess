@@ -4,14 +4,18 @@ class GuessesController < ApplicationController
     @totalGuesses = Guess.count
     @correctGuesses = countCorrectGuesses
 
+    print("total guesses: " + @totalGuesses)
+    print("correct guesses: " + @correctGuesses)
+
     # forced coercions to float are necessary to prevent integer math...
+    # TODO check for divide by zero
     @percentAccuracy = (((@correctGuesses.to_f / @totalGuesses.to_f).round(2)) * 100).round(0)
   end
 
   # Called by the frontend to both "guess" the value and create the row in the database for this user
   def create
     # get the input parameters (height and weight) from the client request
-    if(!params['height'] || !params['weight']) then
+    if (!params['height'] || !params['weight']) then
       render json: {error: 'error: missing parameter', status: 400}.to_json
     end
     height = params['height'].to_i
@@ -67,11 +71,22 @@ class GuessesController < ApplicationController
     totalCat = distFromCatAvgWeight + distFromCatAvgHeight
 
     if totalCat > totalDog then
-      guessValue = "dog"
+      guessValue = 'dog'
     else
-      guessValue = "cat"
+      guessValue = 'cat'
     end
 
     guessValue
+  end
+
+  # Query to count the number of correct guesses across all entries in the Guesses table
+  def countCorrectGuesses
+    query = <<-SQL
+  SELECT COUNT(ID) 
+  FROM guesses
+  WHERE actualvalue = guessvalue
+    SQL
+
+    ActiveRecord::Base.connection.execute(query)[0]['COUNT(ID)']
   end
 end
