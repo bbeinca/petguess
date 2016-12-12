@@ -1,7 +1,5 @@
 # petguess
 #
-*PetGuess*
-
 A single-page web app that guesses the user's pet preference based on their height and weight.
 Also provides a scatter plot of all past data collected.
 
