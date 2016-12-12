@@ -3,7 +3,7 @@
 A single-page web app that guesses the user's pet preference based on their height and weight.
 Also provides a scatter plot of all past data collected.
 
-Implemented using JavaScript/jQuery on the front-end and Ruby/Rails on the backend.
+Implemented using JavaScript/jQuery/Bootstrap on the front-end and Ruby/Rails on the backend.
 
 Improvements to be made:
  - I didn't realize there were ActiveRecord enums until later on -- this would definitely be a helpful refactoring.
