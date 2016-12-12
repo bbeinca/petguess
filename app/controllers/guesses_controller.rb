@@ -82,9 +82,9 @@ class GuessesController < ApplicationController
   # Query to count the number of correct guesses across all entries in the Guesses table
   def countCorrectGuesses
     query = <<-SQL
-  SELECT COUNT(ID) 
+  SELECT COUNT(*) 
   FROM guesses
-  WHERE actualvalue = guessvalue
+  WHERE actualvalue LIKE guessvalue
     SQL
 
     ActiveRecord::Base.connection.execute(query)[0]['COUNT(ID)']
