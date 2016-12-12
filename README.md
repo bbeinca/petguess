@@ -7,7 +7,7 @@ Also provides a scatter plot of all past data collected.
 
 Implemented using JavaScript/jQuery on the front-end and Ruby/Rails on the backend.
 
-Improvements:
+Improvements to be made:
  - I didn't realize there were ActiveRecord enums until later on -- this would definitely be a helpful refactoring.
  - The scatter plot could be a little nicer and more polished (I was having trouble getting the axis labels, for example)
  - The backend should be generating UUIDs and sending those back to the client instead of its internal database IDs (security)
