@@ -9,6 +9,9 @@ class Guess < ActiveRecord::Base
             presence: true,
             inclusion: { in: %w(dog cat),
                          message: "%{value} is not a valid pet type" }
+
+  # TODO - this creates problems currently, but can be re-enabled once the refactoring
+  # is complete to only commit when all data is present
   #validates :actualvalue,
             #inclusion: { in: %w(dog cat),
              #            message: "%{value} is not a valid pet type" }

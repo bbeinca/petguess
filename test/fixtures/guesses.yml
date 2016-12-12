@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  height: 1
-  weight: 1
-  guessvalue: MyString
-  actualvalue: MyString
+  height: 50
+  weight: 100
+  guessvalue: cat
+  actualvalue: dog
 
 two:
-  height: 1
-  weight: 1
-  guessvalue: MyString
-  actualvalue: MyString
+  height: 75
+  weight: 200
+  guessvalue: cat
+  actualvalue: cat
